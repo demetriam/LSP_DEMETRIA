@@ -14,10 +14,10 @@ public class Driver {
 		
 		IntegerSet set2 = new IntegerSet();
 		set2.add(4);
+		set2.add(2);
 		set2.add(5);
-		set2.add(8);
-		set2.add(9);
-//		
+		set2.add(6);
+		
 //		for (int i = 0;i<10;i++)
 //			set1.add(i);
 //		

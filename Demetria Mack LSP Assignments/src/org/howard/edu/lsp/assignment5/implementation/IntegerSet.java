@@ -46,24 +46,23 @@ public class IntegerSet {
 	 * @return true/ false checks if two sets are equal. Tested by the built in method .equals
 	 */
 	
-//	public boolean equals(IntegerSet b) {
-//		if (b.length() != set.size()) {
-//			return false;
-//		} else {		
-//			
-//		
-//			ArrayList <Integer> tempSet1 = new ArrayList<Integer>(set);
-//			ArrayList <Integer> tempSet2 = new ArrayList<Integer>(b);
-//			
-//			IntegerSet.toArray(tempSet2);
-//			
-//			Collections.sort((tempSet1));
-//			Collections.sort(tempSet2);
-//			
-//			return tempSet1.equals(tempSet2);	
-//				
-//			}	  
-//	 }
+	public boolean equals(IntegerSet b) {
+		if (b.length() != set.size()) {
+			return false;
+		} else {		
+			
+		
+			ArrayList <Integer> tempSet1 = new ArrayList<Integer>(set);
+			ArrayList <Integer> tempSet2 = new ArrayList<Integer>(b.getSet());
+			
+			
+			Collections.sort((tempSet1));
+			Collections.sort(tempSet2);
+			
+			return tempSet1.equals(tempSet2);	
+				
+			}	  
+	 }
 	/**
 	 * 
 	 * the @param value is an integer that could possibly be apart of the set 
