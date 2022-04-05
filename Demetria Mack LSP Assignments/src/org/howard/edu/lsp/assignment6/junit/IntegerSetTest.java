@@ -8,10 +8,12 @@ import org.junit.jupiter.api.Test;
 
 
 public class IntegerSetTest {
+	IntegerSet set1 = new IntegerSet();
+	IntegerSet set2 = new IntegerSet();
+	IntegerSet set3 = new IntegerSet();
     @Test
     @DisplayName("IntegerSet.isEmpty test cases")
     public void testIsEmpty() {
-       IntegerSet set1 = new IntegerSet ();
        assertTrue(set1.isEmpty());
        
        set1.add(1);
@@ -22,7 +24,6 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.clear test cases ")
     public void testClear(){	
-		IntegerSet set1 = new IntegerSet();
 		set1.clear();
 		assertTrue(set1.isEmpty());
 		
@@ -41,10 +42,8 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.length test cases ")
     public void testlength() {
-    	IntegerSet set1 = new IntegerSet();
     	assertTrue(set1.length()==0);
     	
-    	IntegerSet set2 = new IntegerSet();
     	for(int i = -20; i<20; i++)
     		set2.add(i);
     	assertTrue(set2.length() == 40);
@@ -55,12 +54,6 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.equals test cases ")
     public void testequals() {
-    	
-    	IntegerSet set1 = new IntegerSet();
-    	IntegerSet set2 = new IntegerSet();
-    	IntegerSet set3 = new IntegerSet();
-    	
-    	
     	
     	for(int i = -20;i<20; i++)
     		set1.add(i);
@@ -78,8 +71,6 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.contains test cases ")
     public void testcontains() {
-    	IntegerSet set1 = new IntegerSet();
-    	IntegerSet set2 = new IntegerSet();
     	assertFalse(set1.contains(99));
     	
     	for(int i = -30;i<30; i++)
@@ -103,7 +94,6 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.largest test cases ")
     public void testlargest() throws IntegerSetException {
-    	IntegerSet set1 = new IntegerSet();
     	
     	assertThrows(IntegerSetException.class,() -> set1.largest(), "Set length is 0 cannot search ");
     	
@@ -119,7 +109,6 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.smallest test cases ")
     public void testsmallest() throws IntegerSetException {
-    	IntegerSet set1 = new IntegerSet();
     	
     	assertThrows(IntegerSetException.class,() -> set1.largest(), "Set length is 0 cannot search ");
     	
@@ -134,7 +123,6 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.add test cases ")
     public void testadd() {
-    	IntegerSet set1 = new IntegerSet();
     	set1.add(0);
     	assertTrue(set1.contains(0));
     	
@@ -152,28 +140,27 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.remove test cases ")
     public void testremove() {
-    	IntegerSet set1 = new IntegerSet();
-		set1.add(1);
-		set1.remove(1);
-		assertFalse(set1.contains(1));
-		assertTrue(set1.isEmpty());
-		
-	
-		for (int i = 1;i<100;i++) {
-			set1.add(i);
-			set1.remove(i);
-			assertFalse(set1.contains(i));
-		}
+   
+//		set1.remove(0);
+//		assertFalse(set1.contains(0));
+//		assertTrue(set1.isEmpty());
+    	set1.add(0);
+		set1.add(2);
+		set1.add(4);
+		set1.add(6);
+		set1.add(10);
+		set1.add(12);
+		set1.remove(2);
+
+		assertFalse(set1.contains(2));
 	}
+	
+
     
     
     @Test
     @DisplayName("IntegerSet.union test cases ")
     public void testunion() {
-    	IntegerSet set1 = new IntegerSet();
-    	IntegerSet set2 = new IntegerSet();
-    	IntegerSet set3 = new IntegerSet();
-    	
     	set1.union(set2);
 		assertTrue(set1.equals(set2));
 		assertTrue(set1.equals(set3));
@@ -201,10 +188,7 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.intersect test cases ")
     public void testIntersect() {
-    	IntegerSet set1 = new IntegerSet();
-		IntegerSet set2 = new IntegerSet();
-		IntegerSet set3 = new IntegerSet();
-		
+    
     	set1.intersect(set2);
     	assertTrue(set1.equals(set2));
     	assertTrue(set1.equals(set3));
@@ -231,9 +215,6 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.diff test cases ")
     public void testdiff() {
-    	IntegerSet set1 = new IntegerSet();
-		IntegerSet set2 = new IntegerSet();
-		IntegerSet set3 = new IntegerSet();
 		
 		for (int i = 0;i<10;i++)
 			set1.add(i);
@@ -241,10 +222,11 @@ public class IntegerSetTest {
 		for (int i = 0;i<2;i++)
 			set2.add(i);
 		set2.diff(set1);
-		assertTrue(set2.isEmpty());
-		
-		set1.diff(set3);
-		assertTrue(set1.length()==10);
+		assertFalse(set2.isEmpty());
+//		
+//		assertTrue()
+//	
+
     
     	
     }
@@ -253,15 +235,13 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.toString test cases ")
     public void testtoString() {
-    	IntegerSet set1 = new IntegerSet();
-		IntegerSet set2 = new IntegerSet();
 		assertTrue(set1.toString().equals(set2.toString()));
 		
-		for (int i = 2;i<10;i++)
+		for (int i = 1;i<10;i++)
 			set1.add(i);
 		assertFalse(set1.toString().equals(set2.toString()));
 		
-		for (int i = 2;i<10;i++) 
+		for (int i = 1;i<10;i++) 
 			set2.add(i);
 		assertTrue(set1.toString().equals(set2.toString()));
 	
