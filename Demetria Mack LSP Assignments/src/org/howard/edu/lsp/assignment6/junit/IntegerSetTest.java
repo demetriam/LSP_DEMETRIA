@@ -232,20 +232,20 @@ public class IntegerSetTest {
     @DisplayName("IntegerSet.diff test cases ")
     public void testdiff() {
     	IntegerSet set1 = new IntegerSet();
-    	IntegerSet set2 = new IntegerSet();
-    	IntegerSet set3 = new IntegerSet();
-    		
-    	for (int i = 0;i<10;i++)
-    		set1.add(i);
-    		
-    	for (int i = 0;i<2;i++)
-    			set2.add(i);
-    	
-    	set2.diff(set1);
-    	assertTrue(set2.isEmpty());
-    		
-    	set1.diff(set3);
-    	assertTrue(set1.length()==10);
+		IntegerSet set2 = new IntegerSet();
+		IntegerSet set3 = new IntegerSet();
+		
+		for (int i = 0;i<10;i++)
+			set1.add(i);
+		
+		for (int i = 0;i<2;i++)
+			set2.add(i);
+		set2.diff(set1);
+		assertTrue(set2.isEmpty());
+		
+		set1.diff(set3);
+		assertTrue(set1.length()==10);
+    
     	
     }
     
@@ -253,7 +253,32 @@ public class IntegerSetTest {
     @Test
     @DisplayName("IntegerSet.toString test cases ")
     public void testtoString() {
-    	
+    	IntegerSet set1 = new IntegerSet();
+		IntegerSet set2 = new IntegerSet();
+		assertTrue(set1.toString().equals(set2.toString()));
+		
+		for (int i = 2;i<10;i++)
+			set1.add(i);
+		assertFalse(set1.toString().equals(set2.toString()));
+		
+		for (int i = 2;i<10;i++) 
+			set2.add(i);
+		assertTrue(set1.toString().equals(set2.toString()));
+	
+		for (int i = 0;i>-10;i--) {
+			set1.add(i);
+		}
+		assertFalse(set1.toString().equals(set2.toString()));
+		
+		for (int i = 0;i>-10;i--) {
+			set2.add(i);
+		}
+		assertTrue(set1.toString().equals(set2.toString()));
+		
+		set1.clear();
+		set2.clear();
+		
+		assertTrue(set1.toString().equals(set2.toString()));
     	
     	
     }
