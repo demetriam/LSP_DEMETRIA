@@ -7,10 +7,10 @@ public class Driver {
 	public static void main(String[] args) throws IntegerSetException {
 		
 		IntegerSet set1 = new IntegerSet(); // instantiate new object
-		set1.add(4);
-		set1.add(2);
+		set1.add(7);
+		set1.add(9);
 		set1.add(5);
-		set1.add(6);
+		set1.add(8);
 		
 		IntegerSet set2 = new IntegerSet();
 		set2.add(4);
@@ -44,14 +44,16 @@ public class Driver {
 		
 		
 		
-		set1.union(set2);	// union of set1 and set2
-		System.out.println("Result of union of Set1 and Set2 " + set1.toString());
+//		set1.union(set2);	// union of set1 and set2
+//		System.out.println("Result of union of Set1 and Set2 " + set1.toString());
 
-		
-		set1.intersect(set2); 
-		System.out.println("Result of Intersection of Set1 and Set2 " + set2.toString());
-		
-		
+//		
+//		set1.intersect(set2); 
+//		System.out.println("Result of Intersection of Set1 and Set2 " + set2.toString());
+//		
+//		
+//		set1.diff(set2);
+//		System.out.println("Result of Intersection of Set1 and Set2 " + set1.toString());
 		// test for difference and intersection
 		
 		
