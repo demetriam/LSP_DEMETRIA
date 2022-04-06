@@ -141,10 +141,26 @@ public class IntegerSetTest {
     @DisplayName("IntegerSet.remove test cases ")
     public void testremove() {
    
-//		set1.remove(0);
-//		assertFalse(set1.contains(0));
-//		assertTrue(set1.isEmpty());
-    	set1.add(0);
+//		
+		set1.add(0);
+		set1.add(2);
+		set1.add(4);
+		set1.add(12);
+		
+		set2.add(0);
+		set2.add(2);
+		set2.add(4);
+		set2.add(10);
+		set2.add(12);
+		set2.remove(0);
+		
+
+		assertTrue(set1.length() == set2.length());;
+		
+		set1.clear();
+		set2.clear();
+		
+		set1.add(0);
 		set1.add(2);
 		set1.add(4);
 		set1.add(6);
@@ -153,6 +169,28 @@ public class IntegerSetTest {
 		set1.remove(2);
 
 		assertFalse(set1.contains(2));
+		
+		set1.clear();
+		set2.clear();
+		
+		
+		set1.add(2);
+		set1.add(9);
+		set1.add(5);
+		set1.add(0);
+		set1.add(1);
+		
+		set2.add(9);
+		set2.add(2);
+		set2.add(5);
+		set2.add(1);
+		set2.add(0);
+		
+		set2.remove(1);
+		
+		assertFalse(set1.equals(set2));
+		
+		
 	}
 	
 
