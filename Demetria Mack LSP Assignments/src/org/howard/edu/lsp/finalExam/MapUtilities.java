@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 
 public class MapUtilities {
     public static int commonKeyValuePairs(HashMap<String, String> map1, HashMap<String, String> map2)
-    		throws NullPointerException {
+    		throws MapUtilitiesException {
     
     	int count = 0; 
     	for (Map.Entry<String, String> mapElement: map1.entrySet()) {
